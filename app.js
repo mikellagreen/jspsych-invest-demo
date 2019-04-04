@@ -6,8 +6,8 @@ var bodyParser = require('body-parser');
 
 
 
-// INSTANTIATE THE APP
-var app = express();
+// INSTANTIATE THE APP (this is a variable to hold our app)
+const app = express();
 
 // MONGOdb SETUP
 /*
@@ -30,7 +30,7 @@ var Entry = mongoose.model('Entry', mySchema);
 app.use(express.static('public'));
 app.use('/jspsych-6.0.5', express.static(path.join(__dirname, '/jspsych-6.0.5')));
 
-// BODY PARSING
+// BODY PARSING MIDDLEWARE
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
 
